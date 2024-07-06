@@ -32,7 +32,20 @@ let jp = {
     albums: ['I', 'II', 'IV']
 };
 evh = jp;
+const greetGuitarist = (guitarist) => {
+    return guitarist.name ? `Hello ${guitarist.name.toUpperCase()}!` : `Hello!`;
+};
+console.log(greetGuitarist(jp));
 // enums
 //"Unlike most TypeScript features, Enums are not a 
 //type-level addition to Javascript but something
 //added to the language and runtime"
+var Grade;
+(function (Grade) {
+    Grade[Grade["U"] = 1] = "U";
+    Grade[Grade["D"] = 2] = "D";
+    Grade[Grade["C"] = 3] = "C";
+    Grade[Grade["B"] = 4] = "B";
+    Grade[Grade["A"] = 5] = "A";
+})(Grade || (Grade = {}));
+console.log(Grade.U);

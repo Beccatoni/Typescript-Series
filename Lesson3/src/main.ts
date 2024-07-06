@@ -32,9 +32,17 @@ const exampleObj = {
     pro2: true
 }
 
+// when to use interface and type
+// interface Guitarist  {
+//     name: string,
+//     active: boolean,
+//     albums: (string | number)[]
+// }
+// add a question mark in front of a property to make it optional
+
 type Guitarist = {
     name: string,
-    active: boolean,
+    active?: boolean,
     albums: (string | number)[]
 }
 
@@ -52,6 +60,11 @@ let jp: Guitarist = {
 
 evh = jp
 
+const greetGuitarist = (guitarist:Guitarist) =>{
+return guitarist.name? `Hello ${guitarist.name.toUpperCase()}!`: `Hello!`
+}
+
+console.log(greetGuitarist(jp));
 
 
 
@@ -59,6 +72,17 @@ evh = jp
 //"Unlike most TypeScript features, Enums are not a 
 //type-level addition to Javascript but something
 //added to the language and runtime"
+
+enum Grade {
+    U=1,
+    D,
+    C,
+    B,
+    A
+}
+
+console.log(Grade.U);
+
 
 
 
